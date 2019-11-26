@@ -35,6 +35,12 @@ Controller.prototype.TargetDirectoryPageCallback = function()
   gui.clickButton(buttons.NextButton);
 }
 
+Controller.prototype.DynamicTelemetryPluginFormCallback = function()
+{
+  gui.currentPageWidget().TelemetryPluginForm.statisticGroupBox.disableStatisticRadioButton.setChecked(true);
+  gui.clickButton(buttons.NextButton);
+}
+
 Controller.prototype.ComponentSelectionPageCallback = function()
 {
   var cBoxes = ["Archive", "LTS", "Latest releases", "Preview"];
@@ -56,13 +62,16 @@ Controller.prototype.ComponentSelectionPageCallback = function()
   var widget = gui.currentPageWidget();
   widget.deselectAll();
     
-  var version = "qt5.5124";
+  var version = "qt5.5126";
   if (installer.value("VERSION") != "")
   {
     version = installer.value("VERSION");
   }
 
+  gui.currentPageWidget().selectComponent("qt."+version+".android_armv7");
+  gui.currentPageWidget().selectComponent("qt."+version+".android_arm64_v8a");
 
+  version = "qt5.5124";
   gui.currentPageWidget().selectComponent("qt."+version+".android_armv7");
   gui.currentPageWidget().selectComponent("qt."+version+".android_arm64_v8a");
 
