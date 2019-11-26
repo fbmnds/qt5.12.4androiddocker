@@ -1,5 +1,7 @@
-FROM ubuntu:bionic
-MAINTAINER Guenter Schwann version: 0.1
+FROM ubuntu:18.04
+MAINTAINER Guenter Schwann version: 0.2
+
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get clean
 RUN apt-get install -y build-essential git zip unzip bzip2 p7zip wget curl chrpath
@@ -40,6 +42,10 @@ RUN $ANDROID_HOME/tools/bin/sdkmanager "build-tools;28.0.3"
 COPY qt_installer.qs /tmp
 COPY download_android_qt.sh ./
 RUN ./download_android_qt.sh
+
+# Set the QTDIR environment variable
+RUN echo "" >> /etc/profile
+RUN echo "export QTDIR=/opt/Qt/5.12.6/gcc" >> /etc/profile
 
 # Clean apt cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
