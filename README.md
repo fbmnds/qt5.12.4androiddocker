@@ -1,17 +1,19 @@
 ### Qt is installed in:
 
+```
 /opt/Qt/5.12.4/android_armv7
 /opt/Qt/5.12.4/android_arm64_v8a
 /opt/Qt/5.12.6/android_armv7
 /opt/Qt/5.12.6/android_arm64_v8a
+```
 
 ### Android NDK (19c) is in
 
-/opt/android/android-ndk
+`/opt/android/android-ndk`
 
 ### Android SDK platform installed are
 
-opt/android/android-sdk
+`/opt/android/android-sdk`
 
 Versions are:
 
@@ -19,6 +21,7 @@ android-28 and android-17
 
 ### So for qmake use something like the following:
 
+```
 // Set env variables
 
 export ANDROID_NDK_HOST=linux-x86_64
@@ -38,3 +41,4 @@ export ANDROID_NDK_HOST=linux-x86_64
 // Create the APK
 
 /opt/Qt/5.12.6/android_armv7/bin/androiddeployqt --input android-lib<your_app_name>.so-deployment-settings.json --output android-build --android-platform android-28 --jdk $JDK_HOME --gradle
+```
