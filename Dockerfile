@@ -1,13 +1,15 @@
 FROM ubuntu:18.04
-MAINTAINER Guenter Schwann version: 0.2
+LABEL "Maintainer"="Guenter Schwann"
+LABEL "version"="0.3"
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get clean
-RUN apt-get install -y build-essential git zip unzip bzip2 p7zip wget curl chrpath
-
+RUN apt-get update && \
+    apt-get install -y build-essential git zip unzip bzip2 p7zip-full wget curl chrpath libxkbcommon-x11-0 && \
 # Dependencies to create Android pkg
-RUN apt-get install -y openjdk-8-jre openjdk-8-jdk openjdk-8-jdk-headless gradle
+    apt-get install -y openjdk-8-jre openjdk-8-jdk openjdk-8-jdk-headless gradle && \
+# Clean apt cache
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Build everything here
 RUN mkdir -p /opt/android/android-sdk
@@ -32,6 +34,8 @@ ENV PATH $PATH:$ANDROID_HOME/tools
 ENV PATH $PATH:$ANDROID_HOME/platform-tools
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
 
+ENV ANDROID_NDK_HOST linux-x86_64
+
 # Install Android SDK
 RUN yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses && $ANDROID_HOME/tools/bin/sdkmanager --update
 RUN $ANDROID_HOME/tools/bin/sdkmanager "platforms;android-17"
@@ -39,13 +43,15 @@ RUN $ANDROID_HOME/tools/bin/sdkmanager "platforms;android-28"
 RUN $ANDROID_HOME/tools/bin/sdkmanager "build-tools;28.0.3"
 
 # Download / install Qt
-COPY qt_installer.qs /tmp
-COPY download_android_qt.sh ./
-RUN ./download_android_qt.sh
+ADD https://code.qt.io/cgit/qbs/qbs.git/plain/scripts/install-qt.sh ./
+RUN bash install-qt.sh --version 5.12.4 --target android --toolchain android_armv7 qtbase qt3d qtdeclarative qtandroidextras qtconnectivity qtgamepad qtlocation qtmultimedia qtquickcontrols2 qtremoteobjects qtscxml qtsensors qtserialport qtsvg qtimageformats qttools qtspeech qtwebchannel qtwebsockets qtwebview qtxmlpatterns qttranslations && \
+    bash install-qt.sh --version 5.12.4 --target android --toolchain android_arm64_v8a qtbase qt3d qtdeclarative qtandroidextras qtconnectivity qtgamepad qtlocation qtmultimedia qtquickcontrols2 qtremoteobjects qtscxml qtsensors qtserialport qtsvg qtimageformats qttools qtspeech qtwebchannel qtwebsockets qtwebview qtxmlpatterns qttranslations && \
+    bash install-qt.sh --version 5.12.6 --target android --toolchain android_armv7 qtbase qt3d qtdeclarative qtandroidextras qtconnectivity qtgamepad qtlocation qtmultimedia qtquickcontrols2 qtremoteobjects qtscxml qtsensors qtserialport qtsvg qtimageformats qttools qtspeech qtwebchannel qtwebsockets qtwebview qtxmlpatterns qttranslations && \
+    bash install-qt.sh --version 5.12.6 --target android --toolchain android_arm64_v8a qtbase qt3d qtdeclarative qtandroidextras qtconnectivity qtgamepad qtlocation qtmultimedia qtquickcontrols2 qtremoteobjects qtscxml qtsensors qtserialport qtsvg qtimageformats qttools qtspeech qtwebchannel qtwebsockets qtwebview qtxmlpatterns qttranslations
 
 # Set the QTDIR environment variable
-RUN echo "" >> /etc/profile
-RUN echo "export QTDIR=/opt/Qt/5.12.6/gcc" >> /etc/profile
+ENV QTDIR="/opt/Qt/5.12.6/android_armv7"
 
-# Clean apt cache
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+COPY build.sh /build.sh
+
+ENTRYPOINT /bin/bash /build.sh

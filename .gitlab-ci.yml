@@ -8,11 +8,11 @@ stages:
 - deploy
 
 variables:
-  CONTAINER_TEST_IMAGE: registry.gitlab.com/vikingsoftware/qt5.12.4androiddocker:$CI_BUILD_REF_NAME
-  CONTAINER_RELEASE_IMAGE: registry.gitlab.com/vikingsoftware/qt5.12.4androiddocker:latest
+  CONTAINER_TEST_IMAGE: $CI_REGISTRY/$CI_PROJECT_PATH:$CI_BUILD_REF_NAME
+  CONTAINER_RELEASE_IMAGE: $CI_REGISTRY/$CI_PROJECT_PATH:latest
 
 before_script:
-  - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com/vikingsoftware/qt5.12.4androiddocker
+  - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY/$CI_PROJECT_PATH
 
 build:
   stage: build
