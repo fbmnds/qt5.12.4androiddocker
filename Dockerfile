@@ -43,7 +43,8 @@ RUN $ANDROID_HOME/tools/bin/sdkmanager "platforms;android-28"
 RUN $ANDROID_HOME/tools/bin/sdkmanager "build-tools;28.0.3"
 
 # Download / install Qt
-ADD https://code.qt.io/cgit/qbs/qbs.git/plain/scripts/install-qt.sh ./
+####ADD https://code.qt.io/cgit/qbs/qbs.git/plain/scripts/install-qt.sh ./
+COPY install-qt.sh /install-qt.sh
 RUN bash install-qt.sh --version 5.12.4 --target android --toolchain android_armv7 qtbase qt3d qtdeclarative qtandroidextras qtconnectivity qtgamepad qtlocation qtmultimedia qtquickcontrols2 qtremoteobjects qtscxml qtsensors qtserialport qtsvg qtimageformats qttools qtspeech qtwebchannel qtwebsockets qtwebview qtxmlpatterns qttranslations && \
     bash install-qt.sh --version 5.12.4 --target android --toolchain android_arm64_v8a qtbase qt3d qtdeclarative qtandroidextras qtconnectivity qtgamepad qtlocation qtmultimedia qtquickcontrols2 qtremoteobjects qtscxml qtsensors qtserialport qtsvg qtimageformats qttools qtspeech qtwebchannel qtwebsockets qtwebview qtxmlpatterns qttranslations && \
     bash install-qt.sh --version 5.12.6 --target android --toolchain android_armv7 qtbase qt3d qtdeclarative qtandroidextras qtconnectivity qtgamepad qtlocation qtmultimedia qtquickcontrols2 qtremoteobjects qtscxml qtsensors qtserialport qtsvg qtimageformats qttools qtspeech qtwebchannel qtwebsockets qtwebview qtxmlpatterns qttranslations && \
