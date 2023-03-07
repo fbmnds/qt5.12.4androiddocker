@@ -1,0 +1,637 @@
+    1  ll
+    2  ll root/ecl/android/
+    3  cd /root
+    4  ll
+    5  pwd
+    6  git clone https://github.com/fbmnds/control-ui-lqml.git
+    7  cd control-ui-lqml/lqml/apps/control-ui/build-android/
+    8  /opt/Qt/5.12.6/android_armv7/bin/qmake "CONFIG+=32bit" ..
+    9  cd
+   10  git clone https://github.com/bbernhard/imagemonkey-thegame.git /tmp/imagemonkey-thegame
+   11  build-android-gradle-project /tmp/imagemonkey-thegame/imagemonkey_thegame.pro
+   12  /usr/bin/build-android-gradle-project
+   13  l
+   14  cd /tmp/imagemonkey-thegame
+   15  ll
+   16  /opt/Qt/5.12.6/android_armv7/bin/qmake "CONFIG+=32bit" .
+   17  ll
+   18  make
+   19  make apk
+   20  cat Makefile 
+   21  ll
+   22  ll | less
+   23  ll android
+   24  mkdir android-build
+   25  cd android-build/
+   26  /opt/Qt/5.12.6/android_armv7/bin/qmake "CONFIG+=32bit" ..
+   27  make
+   28  ll
+   29  rm *.o
+   30  ll
+   31  rm *.cpp
+   32  ll
+   33  less Makefile 
+   34  make all
+   35  ll *.apk
+   36  ll 
+   37  make install
+   38  ll
+   39  less Makefile 
+   40  find /Qt -name build-android-gradle-project
+   41  find / -name build-android-gradle-project
+   42  cd
+   43  wget https://raw.githubusercontent.com/homdx/qtci/master/bin/build-android-gradle-project
+   44  chmod u+x build-android-gradle-project 
+   45  mv  build-android-gradle-project /usr/bin/
+   46  cd /tmp/imagemonkey-thegame/
+   47  cd 
+   48  build-android-gradle-project /tmp/imagemonkey-thegame/imagemonkey_thegame.pro
+   49  ln -s /opt/Qt/5.12.6/android_armv7/bin/qmake /usr/bin
+   50  which qmake
+   51  build-android-gradle-project /tmp/imagemonkey-thegame/imagemonkey_thegame.pro
+   52  build-android-gradle-project -spec android-clang /tmp/imagemonkey-thegame/imagemonkey_thegame.pro
+   53  qmake -spec android-clang /tmp/imagemonkey-thegame/imagemonkey_thegame.pro
+   54  cd  /tmp/imagemonkey-thegame/
+   55  cd android-build/
+   56  qmake -spec android-clang ..
+   57  qmake  ..
+   58  qmake -spec android-g++ ..
+   59  less ../imagemonkey_thegame.pro 
+   60  less /usr/bin/build-android-gradle-project 
+   61  cd
+   62  build-android-gradle-project /tmp/imagemonkey-thegame/imagemonkey_thegame.pro
+   63  ll /tmp/imagemonkey-thegame/
+   64  ll /tmp/imagemonkey-thegame/ | less
+   65  less /tmp/imagemonkey-thegame/.qmake.stash 
+   66  rm /tmp/imagemonkey-thegame/.qmake.stash 
+   67  build-android-gradle-project /tmp/imagemonkey-thegame/imagemonkey_thegame.pro
+   68  qmake -spec android-clang /tmp/imagemonkey-thegame/imagemonkey_thegame.pro
+   69  qmake  /tmp/imagemonkey-thegame/imagemonkey_thegame.pro
+   70  export QTDIR=/opt/Qt/5.12.6/android_armv7
+   71  build-android-gradle-project /tmp/imagemonkey-thegame/imagemonkey_thegame.pro
+   72  qmake  /tmp/imagemonkey-thegame/imagemonkey_thegame.pro
+   73  build-android-gradle-project /tmp/imagemonkey-thegame/imagemonkey_thegame.pro
+   74  echo $QTDIR
+   75  ll /opt/Qt/5.12.6/android_armv7
+   76  ll /opt/Qt/5.12.6/android_armv7/mkspecs/
+   77  ll /opt/Qt/5.12.6/android_armv7/mkspecs/ | less
+   78  echo $QTDIR
+   79  build-android-gradle-project /tmp/imagemonkey-thegame/imagemonkey_thegame.pro
+   80  ll /opt/Qt/5.12.6/android_armv7/mkspecs/ | less
+   81* qmake 
+   82  ll /home/qt/work/install/lib
+   83  ll /home/qt/work/install/
+   84  ll /home/qt/work/
+   85* 
+   86  ll /home/
+   87  /opt/Qt/5.12.6/android_armv7/bin/qmake --version
+   88  /opt/Qt/5.12.6/android_armv7/bin/qmake /tmp/imagemonkey-thegame/imagemonkey_thegame.pro 
+   89  rm .qmake.stash 
+   90  cd /tmp/imagemonkey-thegame/
+   91  make
+   92  make INSTALL_ROOT=android-build -f Makefile install
+   93  ll *.apk
+   94  ll
+   95  ll | less
+   96  ll android-build/
+   97  ll android-build/ | less
+   98  make INSTALL_ROOT=android-build -f Makefile install
+   99  /opt/Qt/5.12.6/android_armv7/bin/androiddeployqt --input android-libimagemonkey_thegame.so-deployment-settings.json --output android-build --android-platform android-28 --jdk $JAVA_HOME --gradle
+  100  ll
+  101  ll *apk
+  102  ll android-build/ | less
+  103  find . -name *.apk
+  104  /opt/Qt/5.12.4/android_armv7/bin/qmake /tmp/imagemonkey-thegame/imagemonkey_thegame.pro 
+  105  make INSTALL_ROOT=android-build -f Makefile install
+  106  make clean
+  107  make INSTALL_ROOT=android-build -f Makefile install
+  108  find . -name *.apk
+  109  ll ./android-build/build/outputs/apk/android-build-debug.apk
+  110  rm ./android-build/build/outputs/apk/android-build-debug.apk
+  111  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libimagemonkey_thegame.so-deployment-settings.json --output android-build --android-platform android-17 --jdk $JAVA_HOME --gradle
+  112  make clean
+  113  /opt/Qt/5.12.6/android_armv7/bin/qmake /tmp/imagemonkey-thegame/imagemonkey_thegame.pro 
+  114  make INSTALL_ROOT=android-build -f Makefile install
+  115  /opt/Qt/5.12.6/android_armv7/bin/androiddeployqt --input android-libimagemonkey_thegame.so-deployment-settings.json --output android-build --android-platform android-17 --jdk $JAVA_HOME --gradle
+  116  ll
+  117  /opt/Qt/5.12.6/android_armv7/bin/androiddeployqt --input android-libimagemonkey_thegame.so-deployment-settings.json --output android-build --android-platform android-28 --jdk $JAVA_HOME --gradle
+  118  /opt/Qt/5.12.6/android_armv7/bin/androiddeployqt --input android-libimagemonkey_thegame.so-deployment-settings.json --output android-build --android-platform android-17 --jdk $JAVA_HOME --gradle
+  119  /opt/Qt/5.12.6/android_armv7/bin/androiddeployqt --input android-libimagemonkey_thegame.so-deployment-settings.json --output android-build --android-platform android-17 --jdk $JAVA_HOME --gradle --stacktrace
+  120  cd
+  121  cd control-ui-lqml/lqml/apps/control-ui/build-android/
+  122  /opt/Qt/5.12.6/android_armv7/bin/qmake "CONFIG+=32BIT" ..
+  123  /opt/Qt/5.12.6/android_armv7/bin/qmake  ..
+  124  ll ..
+  125  less ../app.pro 
+  126  export ECL_ANDROID=/root/ecl/android/ecl-android
+  127  export ECL_ANDROID_32=/root/ecl/android/32bit/ecl-android
+  128  /opt/Qt/5.12.6/android_armv7/bin/qmake  ..
+  129  find /root/ecl -name libecl.so.21.2
+  130  less ../app.pro 
+  131  ll /usr/local/lib/
+  132* ll /usr/local/lib/
+  133  less ../app.pro 
+  134  /opt/Qt/5.12.6/android_armv7/bin/qmake  ..
+  135  ll /root/ecl/android/ecl-android/../ecl-android-host/bin/ecl
+  136  ll /root/ecl/android/ecl-android/../ecl-android-host/bin/
+  137  less /root/ecl/android/ecl-android/../ecl-android-host/bin/ecl-config 
+  138  nano /root/ecl/android/ecl-android/../ecl-android-host/bin/ecl-config 
+  139  apt-get install nano
+  140  nano /root/ecl/android/ecl-android/../ecl-android-host/bin/ecl-config 
+  141  /opt/Qt/5.12.6/android_armv7/bin/qmake  ..
+  142  nano /root/ecl/android/ecl-android/../ecl-android-host/bin/ecl-config 
+  143  cd
+  144  ll
+  145  rm -rf ecl
+  146  tar -xf ecl-android.tar.gz 
+  147  cd ecl
+  148  ll
+  149  cd android/
+  150  ll
+  151  less ./1-make-ecl-host.sh 
+  152  cd ..
+  153  ll
+  154  cd ..
+  155  ll
+  156  rm -rf ecl
+  157  tar -xf ecl-21.2.1.tgz 
+  158  ll
+  159  cd ecl-21.2.1
+  160  ll
+  161  cd ..
+  162  mkdir ecl
+  163  mv ecl-21.2.1 ecl
+  164  cd ecl
+  165  ll
+  166  ll ..
+  167  ll
+  168  mv ecl-21.2.1/ android
+  169  cp ../control-ui-lqml/lqml/platforms/android/build-ecl/*.sh .
+  170  ll
+  171  ./1-make-ecl-host.sh 
+  172  ll
+  173  mv *.sh android/
+  174  cd android/
+  175  ./1-make-ecl-host.sh 
+  176  ll
+  177  gcc
+  178  clang
+  179  find /Qt -name clang
+  180  find /opt/ -name clang
+  181  ln -s /opt/android/android-ndk/toolchains/llvm/prebuilt/linux-x86_64/bin/clang /usr/bin
+  182  ./1-make-ecl-host.sh 
+  183  ./2-make-ecl-android.sh 
+  184  ll
+  185  ./2-make-ecl-android.sh 
+  186  find /opt/ -name clang
+  187  rm /usr/bin/clang
+  188  ln -s /opt/android/android-ndk/toolchains/llvm/prebuilt/linux-x86_64/lib64/cmake/clang /usr/bin
+  189  ./2-make-ecl-android.sh 
+  190  rm /usr/bin/clang
+  191  find /opt/ -name cc
+  192  find /usr -name clang
+  193  find /usr -name *gcc
+  194  ll /
+  195  ll /opt
+  196  ll /opt/android/
+  197  ll /opt/android/android-ndk/
+  198  export ANDROID_NDK_ROOT=/opt/android/android-ndk
+  199  export ANDROID_NDK_TOOLCHAIN=$ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/linux-x86_64
+  200  ll
+  201  ./2-make-ecl-android.sh 
+  202  cd
+  203  history
+  204  history | less
+  205  pwd
+  206  cd control-ui-lqml/lqml/apps/control-ui/build-android/
+  207  /opt/Qt/5.12.6/android_armv7/bin/qmake  ..
+  208  /opt/Qt/5.12.6/android_armv7/bin/qmake  "CONFIG+=32bit" ..
+  209  /opt/Qt/5.12.6/android_armv7/bin/qmake  ..
+  210  ll /root/ecl/android/32bit/ecl-android/../ecl-android-host/bin/ecl
+  211  ll /root/ecl/android/32bit/ecl-android-host/bin/ecl
+  212  ll /root/ecl/android/32bit
+  213  ll /root/ecl/android/
+  214  ll /root/ecl/
+  215  ll /root/ecl/android/
+  216  ll /root/ecl/android/ecl-android-host
+  217  ll /root/ecl/android/ecl-android
+  218  cd 
+  219  cd ecl/android/
+  220  ll
+  221  ll ../control-ui-lqml/lqml/platforms/android/build-ecl/32bit
+  222  ll ../control-ui-lqml/lqml/platforms/android/build-ecl/
+  223  ll ../../control-ui-lqml/lqml/platforms/android/build-ecl/
+  224  ll ../../control-ui-lqml/lqml/platforms/android/build-ecl/32bit/
+  225  cp ../../control-ui-lqml/lqml/platforms/android/build-ecl/32bit/*.sh .
+  226  ll /usr/bin/clang
+  227  ln -s /opt/android/android-ndk/toolchains/llvm/prebuilt/linux-x86_64/bin/clang /usr/bin
+  228  ./1-make-ecl-host.sh 
+  229  ll
+  230  less 1-make-ecl-host.sh 
+  231  find / -name clang
+  232  make clean
+  233  ll
+  234  ./1-make-ecl-host.sh 
+  235  clang
+  236  clang --version
+  237  find / -name clang
+  238  find / -name gcc
+  239  rm /usr/bin/clang
+  240  ./1-make-ecl-host.sh 
+  241  make clean
+  242  ll
+  243  rm 1-make-ecl-host.sh 
+  244  rm 2-make-ecl-android.sh 
+  245  cp ../../control-ui-lqml/lqml/platforms/android/build-ecl/32bit/*.sh .
+  246  ll
+  247  ./1-make-ecl-host.sh 
+  248  less ./1-make-ecl-host.sh 
+  249  cd ~/control-ui-lqml/lqml/apps/control-ui/build-android/
+  250  make clean
+  251  /opt/Qt/5.12.6/android_armv7/bin/qmake  ..
+  252  make
+  253  ll /root/ecl/android/ecl-android-host/lib/ecl-21.2.1/asdf.fas
+  254  ll
+  255  less Makefile 
+  256  ll /opt/android/android-ndk/toolchains/llvm/prebuilt/linux-x86_64/bin/clang
+  257  ll /opt/android/android-ndk/toolchains/llvm/prebuilt/linux-x86_64/bin/clang*
+  258  /opt/Qt/5.12.6/android_armv7/bin/qmake  ..
+  259  make
+  260  ecl
+  261  ll ~/.cache/commmon-lisp/
+  262  mkdir ~/.cache/common-lisp/
+  263  mkdir -p ~/.cache/common-lisp/
+  264  ecl
+  265  cd && curl -O https://beta.quicklisp.org/quicklisp.lisp
+  266  ll
+  267  ecl --load quicklisp.lisp 
+  268  ecl --shell quicklisp.lisp 
+  269  (quicklisp-quickstart:install)
+  270  ecl --shell quicklisp.lisp 
+  271  ecl --;oad quicklisp.lisp 
+  272  ecl --load quicklisp.lisp 
+  273  cd ~/control-ui-lqml/lqml/apps/control-ui/build-android/
+  274  /opt/Qt/5.12.6/android_armv7/bin/qmake  ..
+  275  make
+  276  /opt/Qt/5.12.6/android_armv7/bin/qmake  "CONFIG+=32bit" ..
+  277  /opt/Qt/5.12.6/android_arm64_v8a/bin/qmake  ..
+  278  make
+  279  cd
+  280  ll
+  281  rm ecl-*
+  282  rm -rf ecl
+  283  git clone https://gitlab.com/embeddable-common-lisp/ecl.git
+  284  ll
+  285  ll ecl
+  286  ll
+  287  mv ecl android
+  288  mkir ecl
+  289  mkdir ecl
+  290  mv android ecl
+  291  ll
+  292  ll ecl
+  293  cd ecl/android/
+  294  ll
+  295  mkdir 32bit
+  296  ll
+  297  rm 32bit/
+  298  rmdir 32bit/
+  299  git clone https://gitlab.com/embeddable-common-lisp/ecl.git
+  300  mv ecl 32bit
+  301  ll
+  302  ln -s /opt/android/android-ndk/toolchains/llvm/prebuilt/linux-x86_64/bin/clang /usr/bin
+  303  cp ../control-ui-lqml/lqml/platforms/android/build-ecl/*.sh .
+  304  ll
+  305  clang
+  306  ./1-make-ecl-host.sh
+  307  cp ../control-ui-lqml/lqml/platforms/android/build-ecl/*.sh .
+  308  cp ~/control-ui-lqml/lqml/platforms/android/build-ecl/*.sh .
+  309  ./1-make-ecl-host.sh
+  310  ./2-make-ecl-android.sh 
+  311  cd 32bit/
+  312  cp ~/control-ui-lqml/lqml/platforms/android/build-ecl/32bit/*.sh .
+  313  ./1-make-ecl-host.sh 
+  314  less config.log
+  315  ll
+  316  less 1-make-ecl-host.sh 
+  317  clang
+  318  ./1-make-ecl-host.sh 
+  319  cd
+  320  cd control-ui-lqml/lqml/apps/control-ui
+  321  cd build-android/
+  322  /opt/Qt/5.12.6/android_armv7/bin/qmake ..
+  323  make
+  324  /opt/Qt/5.12.6/android_arm64_v8a/bin/qmake ..
+  325  make
+  326  make clean
+  327  make
+  328  make apk
+  329  make clean
+  330  make apk
+  331  /opt/Qt/5.12.6/android_arm64_v8a/bin/qmake ..
+  332  make clean
+  333  make apk
+  334  rm Makefile 
+  335  /opt/Qt/5.12.6/android_arm64_v8a/bin/qmake ..
+  336  make clean
+  337  make apk
+  338  make 
+  339  ll
+  340  make apk
+  341  ll
+  342  less Makefile 
+  343  /opt/Qt/5.12.4/android_arm64_v8a/bin/qmake ..
+  344  make apk
+  345  less ../app.pro 
+  346  /opt/Qt/5.12.4/android_arm64_v8a/bin/qmake ..
+  347  make clean
+  348  /opt/Qt/5.12.4/android_arm64_v8a/bin/qmake ..
+  349  make apk
+  350  /home/dev/Qt/5.15.2/android/bin/androiddeployqt --input /home/dev/control-ui-lqml/lqml/apps/control-ui-backend/build-android/android-app-deployment-settings.json --output /home/dev
+  351  /control-ui-lqml/lqml/apps/control-ui-backend/build-android/android-build --apk /home/dev/control-ui-lqml/lqml/apps/control-ui-backend/build-android/android-build/app.apk
+  352  /opt/Qt/5.12.4/android/bin/androiddeployqt --input /root/control-ui-lqml/lqml/apps/control-ui-backend/build-android/android-app-deployment-settings.json --output /root
+  353  find /opt -name androiddeployqt
+  354  /opt/Qt/5.12.4/android_arm64_v8a/bin/androiddeployqt --input /root/control-ui-lqml/lqml/apps/control-ui-backend/build-android/android-app-deployment-settings.json --output /root
+  355  /opt/Qt/5.12.4/android_arm64_v8a/bin/androiddeployqt --input /root/control-ui-lqml/lqml/apps/control-ui/build-android/android-app-deployment-settings.json --output /root
+  356* 
+  357  /opt/Qt/5.12.6/android_armv7/bin/androiddeployqt --input android-libapp.so-deployment-settings.json --output android-build --android-platform android-17 --jdk $JAVA_HOME --gradle
+  358  make install INSTALL_ROOT=/root/control-ui-lqml/lqml/apps/control-ui/build-android/android-build/
+  359  /opt/Qt/5.12.6/android_armv7/bin/androiddeployqt --input android-libapp.so-deployment-settings.json --output android-build --android-platform android-17 --jdk $JAVA_HOME --gradle
+  360  /opt/Qt/5.12.6/android_armv7/bin/androiddeployqt --input android-libapp.so-deployment-settings.json --output android-build --android-platform android-28 --jdk $JAVA_HOME --gradle
+  361  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libapp.so-deployment-settings.json --output android-build --android-platform android-17 --jdk $JAVA_HOME --gradle
+  362  ll /root/control-ui-lqml/lqml/apps/control-ui/build-android/android-build//build/outputs/apk/debug/android-build-debug.apk
+  363  /opt/Qt/5.12.4/android_arm64_v8a/bin/qmake ..
+  364  make install INSTALL_ROOT=/root/control-ui-lqml/lqml/apps/control-ui/build-android/android-build/
+  365  make clean
+  366  make install INSTALL_ROOT=/root/control-ui-lqml/lqml/apps/control-ui/build-android/android-build/
+  367  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libapp.so-deployment-settings.json --output android-build --android-platform android-17 --jdk $JAVA_HOME --gradle
+  368  make clean
+  369  cd 
+  370  cd ecl/android/
+  371  less 2-make-ecl-android.sh 
+  372  echo $ANDROID_NDK_TOOLCHAIN
+  373  less 2-make-ecl-android.sh 
+  374  cd 32bit/
+  375  ./2-make-ecl-android.sh 
+  376  ll /root/ecl/android/32bit/ecl-android-host/bin/ecl
+  377  ll /root/ecl/android/32bit/ecl-android-host/bin/
+  378  ll /root/ecl/android/32bit/ecl-android-host/
+  379  ./1-make-ecl-host.sh 
+  380  ess ./1-make-ecl-host.sh 
+  381  less ./1-make-ecl-host.sh 
+  382  which clang
+  383  lll `which clang`
+  384  ll `which clang`
+  385  find /opt -name clang
+  386  apt-get install clang
+  387  ll `which clang`
+  388  ./1-make-ecl-host.sh 
+  389  echo $ANDROID_NDK_TOOLCHAIN
+  390  ll /opt/android/android-ndk/toolchains/llvm/prebuilt
+  391  ll /opt/android/android-ndk/toolchains/llvm/
+  392  ll /opt/android/android-ndk/toolchains/
+  393  ll /opt/android/android-ndk/toolchains/llvm/prebuilt/linux-x86_64/bin/
+  394  ll /opt/android/android-ndk/toolchains/llvm/prebuilt/linux-x86_64/bin/clang
+  395* /opt/android/android-ndk/toolchains/llvm/prebuilt/linux-x86_64
+  396  ./1-make-ecl-host.sh 
+  397  ll
+  398  find /opt -name clang
+  399  less 1-make-ecl-host.sh 
+  400  clang --version
+  401  ./1-make-ecl-host.sh 
+  402  ll
+  403  less .gitlab-ci.yml
+  404  apt update && apt -y install make autoconf
+  405  ./1-make-ecl-host.sh 
+  406  ll build
+  407  rmdir build
+  408  ./1-make-ecl-host.sh 
+  409  ll build
+  410  mkdir build
+  411  ./1-make-ecl-host.sh 
+  412  ll build
+  413  mkdir build
+  414  ll
+  415  ll build/
+  416  ./1-make-ecl-host.sh 
+  417  ll build/
+  418  ll
+  419  less ./1-make-ecl-host.sh 
+  420  ll
+  421  cd ..
+  422  ll
+  423  ./1-make-ecl-host.sh 
+  424  make clean
+  425  l
+  426  ll
+  427  make clean
+  428  ./1-make-ecl-host.sh rm -rf ecl-android-host
+  429  rm -rf ecl-android-host
+  430  rm -rf ecl-android
+  431  make clean
+  432  ./1-make-ecl-host.sh 
+  433  find /opt -name clang
+  434  export ANDROID_NDK_ROOT=/opt/android/android-ndk
+  435  export ANDROID_NDK_TOOLCHAIN=$ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/linux-x86_64
+  436  ./2-make-ecl-android.sh 
+  437  cd 32bit/
+  438  ll
+  439  ll *.sh
+  440  rm *.sh
+  441  cp ~/control-ui-lqml/lqml/platforms/android/build-ecl/32bit/*.sh .
+  442  ll
+  443  ./1-make-ecl-host.sh 
+  444  ll
+  445  les 1-make-ecl-host.sh 
+  446  less 1-make-ecl-host.sh 
+  447  nano 1-make-ecl-host.sh 
+  448  ./1-make-ecl-host.sh 
+  449  ll
+  450  ll build/
+  451  less build/config.log 
+  452  clang -V
+  453  clang --version
+  454  cd ..
+  455  nano 1-make-ecl-host.sh 
+  456  ./1-make-ecl-host.sh 
+  457  less build/config.log 
+  458  ll
+  459  less configure
+  460  cd 32bit/
+  461  ll
+  462  diff ../configure configure 
+  463  ./1-make-ecl-host.sh 
+  464  less build/config.log 
+  465  dpkg --add-architecture i386
+  466  apt-get install libc++1:i386
+  467  ./1-make-ecl-host.sh 
+  468  apt search multilib
+  469  apt-get install gcc-multilib
+  470  ./1-make-ecl-host.sh 
+  471  ./2-make-ecl-host.sh 
+  472  ll
+  473  ./2-make-ecl-android.sh 
+  474  make clean
+  475  ./2-make-ecl-android.sh 
+  476  cd
+  477  cd control-ui-lqml/lqml/apps/control-ui/build-android/
+  478  make clean
+  479  make install INSTALL_ROOT=/root/control-ui-lqml/lqml/apps/control-ui/build-android/android-build/
+  480  make clean
+  481  /opt/Qt/5.12.6/android_armv7/bin/qmake  ..
+  482  /opt/Qt/5.12.6/android_armv7/bin/qmake  "CONFIG+=32bit" ..
+  483* 
+  484  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libapp.so-deployment-settings.json --output android-build --android-platform android-17 --jdk $JAVA_HOME --gradle
+  485  cd
+  486  mkdir ch2-3b
+  487  cd ch2-3b/
+  488  curl -O https://raw.githubusercontent.com/PacktPublishing/Hands-On-Mobile-and-Embedded-Development-with-Qt-5/master/Chapter02/Chapter02-3b/ch2-3b.pro
+  489  ll
+  490  less ch2-3b.pro 
+  491  curl -O https://raw.githubusercontent.com/PacktPublishing/Hands-On-Mobile-and-Embedded-Development-with-Qt-5/master/Chapter02/Chapter02-3b/main.cpp
+  492  ll
+  493  curl -O https://raw.githubusercontent.com/PacktPublishing/Hands-On-Mobile-and-Embedded-Development-with-Qt-5/master/Chapter02/Chapter02-3b/main.qml
+  494  ll
+  495  less main.qml 
+  496  curl -O https://raw.githubusercontent.com/PacktPublishing/Hands-On-Mobile-and-Embedded-Development-with-Qt-5/master/Chapter02/Chapter02-3b/qml.qrc
+  497  /opt/Qt/5.12.6/android_armv7/bin/qmake  "CONFIG+=32bit" 
+  498  ll
+  499  make install INSTALL_ROOT=/root/ch2-3b/build-android
+  500  ll
+  501  ll build-android/
+  502  ll build-android/libs/
+  503  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-17 --jdk $JAVA_HOME --gradle
+  504  make clean && make install INSTALL_ROOT=/root/ch2-3b/android-build/
+  505  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-17 --jdk $JAVA_HOME --gradle
+  506  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-28 --jdk $JAVA_HOME --gradle
+  507  cd /opt
+  508  cd android/ndk
+  509  ll
+  510  cd android/
+  511  ll
+  512  ll android-ndk/
+  513  less android-ndk/README.md 
+  514  less android-ndk/NOTICE
+  515  less android-ndk/NOTICE.toolchain 
+  516  less android-ndk/CHANGELOG.md 
+  517  cd
+  518  cd ch2-3b/
+  519  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-19 --jdk $JAVA_HOME --gradle
+  520  cd ~/control-ui-lqml/lqml/apps/control-ui/build-android/
+  521  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libapp.so-deployment-settings.json --output android-build --android-platform android-19 --jdk $JAVA_HOME --gradle
+  522  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libapp.so-deployment-settings.json --output android-build --android-platform android-21 --jdk $JAVA_HOME --gradle
+  523  cd
+  524  cd ch2-3b/
+  525  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-23 --jdk $JAVA_HOME --gradle
+  526  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-24 --jdk $JAVA_HOME --gradle
+  527  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-25 --jdk $JAVA_HOME --gradle
+  528  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-26 --jdk $JAVA_HOME --gradle
+  529  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-27 --jdk $JAVA_HOME --gradle
+  530  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-28 --jdk $JAVA_HOME --gradle
+  531  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-29 --jdk $JAVA_HOME --gradle
+  532  less ch2-3b.pro 
+  533  ll
+  534  less android-libch2-3b.so-deployment-settings.json 
+  535  nano ch2-3b.pro 
+  536  nano main.qml 
+  537  make clean 
+  538  /opt/Qt/5.12.6/android_armv7/bin/qmake  "CONFIG+=32bit" 
+  539  make clean && make install INSTALL_ROOT=/root/ch2-3b/android-build/
+  540  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-17 --jdk $JAVA_HOME --gradle
+  541  nano main.qml 
+  542  make clean 
+  543  /opt/Qt/5.12.6/android_armv7/bin/qmake  "CONFIG+=32bit" 
+  544  make clean && make install INSTALL_ROOT=/root/ch2-3b/android-build/
+  545  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-17 --jdk $JAVA_HOME --gradle
+  546  nano main.qml 
+  547  nano ch2-3b.pro 
+  548  /opt/Qt/5.12.6/android_armv7/bin/qmake  "CONFIG+=32bit" 
+  549  make clean && make install INSTALL_ROOT=/root/ch2-3b/android-build/
+  550  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-17 --jdk $JAVA_HOME --gradle
+  551  nano ch2-3b.pro 
+  552  /opt/Qt/5.12.6/android_armv7/bin/qmake  "CONFIG+=32bit" 
+  553  nano ch2-3b.pro 
+  554  make clean 
+  555  /opt/Qt/5.12.6/android_armv7/bin/qmake  "CONFIG+=32bit" 
+  556  make clean && make install INSTALL_ROOT=/root/ch2-3b/android-build/
+  557  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-23 --jdk $JAVA_HOME --gradle
+  558  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-28 --jdk $JAVA_HOME --gradle
+  559  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-17 --jdk $JAVA_HOME --gradle
+  560  make clean 
+  561  nano ch2-3b.pro 
+  562  nano main.qml 
+  563  /opt/Qt/5.12.6/android_armv7/bin/qmake  "CONFIG+=32bit" 
+  564  make clean && make install INSTALL_ROOT=/root/ch2-3b/android-build/
+  565  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-17 --jdk $JAVA_HOME --gradle
+  566  nano main.qml 
+  567  make clean && /opt/Qt/5.12.6/android_armv7/bin/qmake  "CONFIG+=32bit" 
+  568  make clean && make install INSTALL_ROOT=/root/ch2-3b/android-build/
+  569  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-17 --jdk $JAVA_HOME --gradle
+  570  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-23 --jdk $JAVA_HOME --gradle
+  571  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-28 --jdk $JAVA_HOME --gradle
+  572  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-23 --jdk $JAVA_HOME --gradle
+  573  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-17 --jdk $JAVA_HOME --gradle
+  574  nano main.qml 
+  575  nano ch2-3b.pro 
+  576  make clean && /opt/Qt/5.12.6/android_armv7/bin/qmake  "CONFIG+=32bit" 
+  577  make clean && make install INSTALL_ROOT=/root/ch2-3b/android-build/
+  578  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-17 --jdk $JAVA_HOME --gradle
+  579  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-28 --jdk $JAVA_HOME --gradle
+  580  nano ch2-3b.pro 
+  581  nano main.qml 
+  582  make clean && /opt/Qt/5.12.6/android_armv7/bin/qmake  "CONFIG+=32bit" 
+  583  make clean && make install INSTALL_ROOT=/root/ch2-3b/android-build/
+  584  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-17 --jdk $JAVA_HOME --gradle
+  585  nano main.qml 
+  586  make clean && /opt/Qt/5.12.6/android_armv7/bin/qmake  "CONFIG+=32bit" 
+  587  make clean && make install INSTALL_ROOT=/root/ch2-3b/android-build/
+  588  nano main.qml 
+  589  make clean && /opt/Qt/5.12.6/android_armv7/bin/qmake  "CONFIG+=32bit" 
+  590  make clean && make install INSTALL_ROOT=/root/ch2-3b/android-build/
+  591  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-17 --jdk $JAVA_HOME --gradle
+  592  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-23 --jdk $JAVA_HOME --gradle
+  593  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-28 --jdk $JAVA_HOME --gradle
+  594  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libch2-3b.so-deployment-settings.json --output android-build --android-platform android-17 --jdk $JAVA_HOME --gradle
+  595  cd
+  596  cd control-ui-lqml/lqml/apps/control-ui
+  597  make clean && /opt/Qt/5.12.6/android_armv7/bin/qmake  "CONFIG+=32bit" 
+  598  /opt/Qt/5.12.6/android_armv7/bin/qmake  "CONFIG+=32bit" 
+  599  make clean && make install INSTALL_ROOT=/root/control-ui-lqml/lqml/apps/control-ui/build-android/
+  600  ll /root/ecl/android/32bit/ecl-android/../ecl-android-host/bin/ecl
+  601  cd build-android/
+  602  make clean && make install INSTALL_ROOT=/root/control-ui-lqml/lqml/apps/control-ui/build-android/
+  603  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libapp.so-deployment-settings.json --output android-build --android-platform android-28 --jdk $JAVA_HOME --gradle
+  604  less ~/ch2-3b/main.cpp 
+  605  ll
+  606  ll ~/.cache/common-lisp/ecl-android-32bit-21.2.1-0cc0fd91-linux-x64/
+  607  ll ~/.cache/common-lisp/ecl-android-32bit-21.2.1-0cc0fd91-linux-x64/root/
+  608  ll ~/.cache/common-lisp/ecl-android-32bit-21.2.1-0cc0fd91-linux-x64/root/quicklisp/
+  609  ll ~/.cache/common-lisp/ecl-android-32bit-21.2.1-0cc0fd91-linux-x64/root/quicklisp/quicklisp/
+  610  ll ~/.cache/common-lisp/ecl-android-32bit-21.2.1-0cc0fd91-linux-x64/root/quicklisp/dists/quicklisp/software/
+  611  ll ..
+  612  less ../ql-libs.lisp 
+  613  cd ..
+  614  mkdir test
+  615  cd test 
+  616  less ../control-ui/run.lisp 
+  617  less ../control-ui/qmake_qmake_immediate.qrc 
+  618  less ../control-ui/mkdirs.sh 
+  619  cp -r ../control-ui/*
+  620  ll
+  621  ll ../control-ui/
+  622  cp -r ../control-ui/* .
+  623  ll
+  624  ll tmp/
+  625  ll release/
+  626  ll lisp
+  627  nano make.lisp
+  628  nano lisp/main.lisp 
+  629  cd ..
+  630  rm -rf test
+  631* /opt/Qt/5.12.6/android_armv7/bin/qmake  "CONFIG+=32bit" .
+  632  cd ~/control-ui-lqml/lqml/apps/control-ui/build-android
+  633  make clean && /opt/Qt/5.12.6/android_armv7/bin/qmake  "CONFIG+=32bit" ..
+  634  make clean && make install INSTALL_ROOT=/root/control-ui-lqml/lqml/apps/control-ui/build-android/android-build/
+  635  /opt/Qt/5.12.4/android_armv7/bin/androiddeployqt --input android-libapp.so-deployment-settings.json --output android-build --android-platform android-17 --jdk $JAVA_HOME --gradle
+  636  cd
+  637  history > history
