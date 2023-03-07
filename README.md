@@ -13,23 +13,26 @@
 
 ### Android SDK platform installed are
 
-`opt/android/android-sdk`
+`/opt/android/android-sdk`
 
-Versions are:
+### Versions are:
 
-android-28 and android-17
+`android-28` and `android-17`
 
 ### The simplest use is to run the container by mounting your workspace in a volume and setting the working directory
 `docker run --rm -v your_volume_mount -w your_workspace -e CONFIG=debug image:tag`
 
-You can optionnally override QTDIR which defaults to /opt/Qt/5.12.6/android_armv7 by calling:
+
+### Set env variables
+
+You can optionnally override `QTDIR` which defaults to `/opt/Qt/5.12.6/android_armv7` by calling:
 `docker run --rm -v your_volume_mount -w your_workspace -e CONFIG=debug -e QTDIR=/opt/Qt/5.12.6/android_arm64_v8a image:tag`
 
 ### You can also run commands separately inside the container.
 First run and enter bash in the container:
 `docker run --rm -ti -v your_volume_mount -w your_workspace -e --entrypoint bash image:tag`
 
-For building with qmake the workflow would be something like the following:
+For building with `qmake` the workflow would be something like the following:
 
 ```
 // run qmake
